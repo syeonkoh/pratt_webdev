@@ -1,74 +1,33 @@
+//Create an array containing 3 or more items
+let colors = ["Red", "Blue", "Black", "Yellow", "White"];
 
-
-let groceries = ["bananas", "milk", "apple"];
-
-for (let i=0, ii=groceries.length; i<ii; i++){
-    console.log(i, groceries[i]);
+//console, log each item in the array
+for (let i=0, ii=colors.length; i<ii; i++){
+    console.log(i, colors[i]);
 };
 
-// instead of above for loop, we can simplify for loop like this
-
-//for (let g of groceries){
-//    console.log(g);
-//}
-
-//object: 
-//when we want to provide a greater level of detail
-let item = {
-    name: "bananas",
-    price: "3.49",
-    aisle: 1
-};
-
-//what if i want to know about only price of one item
-// item.price
-
-//for (x in item){
-//    console.log(x, item[x])
-//}
-
-// objects within arrays
-let grocery_lst = [
-    {name: 'bananas', price: 3.49, aisle:1},
-    {name: 'milk', price:2.99, aisle:4},
-    {name: 'cereals', price:7, aisle:7}
-]
-//for (let g of grocery_lst){
-//    console.log(g.name + " are " + g.price + " in aisle " + g.aisle)
-//}
-
-//functions
-function lst_item(g) {
-    
-    console.log(g.name + " are " + g.price + " in aisle " + g.aisle)
-}
-//console: lst_item(grocery_lst[0])
-
-//function different way
-//let lst_Item =function(){} 이런식
-
-
-for (let g of grocery_lst){
-    lst_item(g)
-}
-
-//Adding DOM elements
-
-let groceries_lst = [
-    {name: 'bananas', price: 3.49, aisle:1},
-    {name: 'milk', price:2.99, aisle:4},
-    {name: 'cereals', price:7, aisle:7}
-]
-
-const ul = document.getElementById('grocery-lst');
-
-function lst_items(g) {
+//Write each item in your array to the DOM
+const ul = document.getElementById('color_lst');
+function lst_colors(color) {
     let li = document.createElement('li');
-    li.innerHTML = g.name + " are " + g.price + " in aisle " + g.aisle;
+    li.innerHTML = color;
     ul.appendChild(li);
     
 }
-
-for (let g of groceries_lst){
-    lst_items(g)
+for (let color of colors){
+    lst_colors(color)
 }
+
+//Create an object with at least 3 properties.
+let users = [
+    {name: 'John', Age: 34, Type:'A'},
+    {name: 'Emily', Age: 25, Type:'B'},
+    {name: 'Jin', Age: 27, Type:'C'},
+    {name: 'Song', price:17, Type:'B'}
+]
+
+//for...in loop, iterate through the object and log each property's key and value to the console.
+for (let x in users){
+    console.log(users[x])
+}
+    
